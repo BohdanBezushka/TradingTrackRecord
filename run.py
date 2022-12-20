@@ -17,13 +17,6 @@ SCOPED_TRADINGTRACKRECORD = TRADINGTRACKRECORD.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_TRADINGTRACKRECORD)
 SHEET = GSPREAD_CLIENT.open("TradingTrackRecord")
 
-
-
-"""
-data = record.get_all_values()
-
-print(data)
-"""
 def get_date():
     """
     The user has to enter the exact date.
@@ -32,7 +25,7 @@ def get_date():
     """
     print("Hello, enter the date of your trading session.")
     print("The date must follow the following structure:")
-    print("Two-digit day, two-digit month, Four-digit year  (example: 11-03-2023).")
+    print("Two-digit day, two-digit month, Four-digit year (example: 11-03-2023).")
 
     while True:
         """
@@ -41,7 +34,7 @@ def get_date():
         try:
             day_session = input("Enter date:")
             datetime.strptime(day_session,'%d-%m-%Y')
-            print(f"{day_session} in valid :)")
+            print(f"{day_session} is valid :)")
             break
         except ValueError:
             print("The date entered is incorrect")
@@ -51,13 +44,13 @@ def update_date_worksheet(date):
     """
     Update the worksheet, add the date specified by the user in the "Date" column. 
     """
-    print("Adding date to the TradingTrackRecord worksheet")
-    date_worksheet = SHEET.worksheet("Year 2023")
-    date_worksheet.append_row(date)
+    print("Adding date to the TradingTrackRecord worksheet.")
+    date_worksheet = SHEET.worksheet("2023")
+    date_worksheet.append_row([date])
     print("Sales worksheet updated successfully.\n")
 
 
-
 date = get_date()
-update_date_worksheet(date)
 print(date)
+update_date_worksheet(date)
+
