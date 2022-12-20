@@ -63,6 +63,28 @@ def get_amount():
             print("You entered an incorrect value.")
     return money
 
+def get_implementation():
+    """ 
+    The user has to indicate YES or NO. 
+    """
+    print("Indicate only with a YES or NO")
+    print("If you have followed your trading plan.")
+
+    while True:
+        """
+        If no YES or NO is received, an error message will
+        be displayed to the user and the loop will continue to run.
+        """
+        answer = input("Have you followed your trading plan? (YES/NO):")
+        if answer.upper() == "YES":
+            print("You respected your investment rules ;)")
+            break
+        elif answer.upper() == "NO":
+            print("You didn't respect your investment rules :(")
+            break
+        else:
+            print("You did not give a correct answer.")
+
 def update_date_worksheet(date, data_money):
     """
     Update the worksheet, add the date and amount specified by the user in the "Date" column. 
@@ -70,15 +92,18 @@ def update_date_worksheet(date, data_money):
     print("Adding date and amount to the TradingTrackRecord worksheet.")
     date_worksheet = SHEET.worksheet("2023")
     date_worksheet.append_row([date, data_money])
-    print("Worksheet updated successfully.\n")
+    print("Date and amount updated successfully.\n")
+
 
 def main_program():
     """
     Run all program functions.
     """
+
     date = get_date()
     print(date)
     data_money = get_amount()
+    implementation = get_implementation()
     update_date_worksheet(date, data_money)
 
 main_program()
