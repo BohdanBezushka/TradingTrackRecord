@@ -39,6 +39,7 @@ def get_date():
             day_session = input("Enter date:")
             datetime.strptime(day_session,'%d-%m-%Y')
             print(f"{day_session} in valid :)")
+            break
         except ValueError:
             print("The date entered is incorrect")
 
