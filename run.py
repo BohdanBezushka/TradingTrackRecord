@@ -63,19 +63,18 @@ def get_amount():
             print("You entered an incorrect value.")
     return money
 
-def update_date_worksheet(date):
+def update_date_worksheet(date, data_money):
     """
-    Update the worksheet, add the date specified by the user in the "Date" column. 
+    Update the worksheet, add the date and amount specified by the user in the "Date" column. 
     """
-    print("Adding date to the TradingTrackRecord worksheet.")
+    print("Adding date and amount to the TradingTrackRecord worksheet.")
     date_worksheet = SHEET.worksheet("2023")
-    date_worksheet.append_row([date])
-    print("Sales worksheet updated successfully.\n")
+    date_worksheet.append_row([date, data_money])
+    print("Worksheet updated successfully.\n")
 
 
 date = get_date()
 print(date)
-update_date_worksheet(date)
-
-get_amount()
+data_money = get_amount()
+update_date_worksheet(date, data_money)
 
