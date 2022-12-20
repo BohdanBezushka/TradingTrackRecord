@@ -40,6 +40,29 @@ def get_date():
             print("The date entered is incorrect")
     return day_session
 
+def get_amount():
+    """ 
+    The user has to enter the profit or loss.
+    If the value is incorrect, a message will be
+    displayed and the user will have to re-enter the correct date.
+    """
+    print("Please enter the result of the investment operation below.")
+    print("The quantity can be negative, positive or zero.")
+    print("There can be a maximum of two decimal places.")
+    print("Example: -100.32, 0.00, 220.80")
+
+    while True:
+        """
+        The user has to enter an exact amount if not the loop will repeatedly request data, until it is valid.
+        """
+        try:
+            money = float(input("Enter amount:"))
+            print(f"{format(money, '.2f')} is valid.")
+            break
+        except ValueError:
+            print("You entered an incorrect value.")
+    return money
+
 def update_date_worksheet(date):
     """
     Update the worksheet, add the date specified by the user in the "Date" column. 
@@ -53,4 +76,6 @@ def update_date_worksheet(date):
 date = get_date()
 print(date)
 update_date_worksheet(date)
+
+get_amount()
 
