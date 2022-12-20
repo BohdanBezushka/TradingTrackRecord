@@ -84,14 +84,15 @@ def get_implementation():
             break
         else:
             print("You did not give a correct answer.")
+    return answer
 
-def update_date_worksheet(date, data_money):
+def update_date_worksheet(date, data_money, implementation):
     """
     Update the worksheet, add the date and amount specified by the user in the "Date" column. 
     """
     print("Adding date and amount to the TradingTrackRecord worksheet.")
     date_worksheet = SHEET.worksheet("2023")
-    date_worksheet.append_row([date, data_money])
+    date_worksheet.append_row([date, data_money, implementation])
     print("Date and amount updated successfully.\n")
 
 
@@ -104,6 +105,6 @@ def main_program():
     print(date)
     data_money = get_amount()
     implementation = get_implementation()
-    update_date_worksheet(date, data_money)
+    update_date_worksheet(date, data_money,implementation)
 
 main_program()
