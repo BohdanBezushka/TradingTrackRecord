@@ -72,9 +72,13 @@ def update_date_worksheet(date, data_money):
     date_worksheet.append_row([date, data_money])
     print("Worksheet updated successfully.\n")
 
+def main_program():
+    """
+    Run all program functions.
+    """
+    date = get_date()
+    print(date)
+    data_money = get_amount()
+    update_date_worksheet(date, data_money)
 
-date = get_date()
-print(date)
-data_money = get_amount()
-update_date_worksheet(date, data_money)
-
+main_program()
