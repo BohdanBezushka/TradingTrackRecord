@@ -86,6 +86,15 @@ def get_implementation():
             print("You did not give a correct answer.")
     return answer
 
+def get_notes():
+    """
+    The user has to describe the most relevant details of the daily operation.
+    """
+    print("Describe your operation clearly and precisely.")
+    print("If you have not complied with your trading plan, please indicate the reason.")
+    note = input("Describe your trade:")
+    return note
+
 def update_date_worksheet(date, data_money, implementation):
     """
     Update the worksheet, add the date and amount specified by the user in the "Date" column. 
@@ -100,11 +109,11 @@ def main_program():
     """
     Run all program functions.
     """
-
     date = get_date()
     print(date)
     data_money = get_amount()
     implementation = get_implementation()
+    description = get_notes()
     update_date_worksheet(date, data_money,implementation)
 
 main_program()
