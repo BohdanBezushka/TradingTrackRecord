@@ -95,13 +95,13 @@ def get_notes():
     note = input("Describe your trade:")
     return note
 
-def update_date_worksheet(date, data_money, implementation):
+def update_date_worksheet(date,data_money,implementation,description):
     """
     Update the worksheet, add the date and amount specified by the user in the "Date" column. 
     """
     print("Adding date and amount to the TradingTrackRecord worksheet.")
     date_worksheet = SHEET.worksheet("2023")
-    date_worksheet.append_row([date, data_money, implementation])
+    date_worksheet.append_row([date,data_money,implementation,description])
     print("Date and amount updated successfully.\n")
 
 
@@ -114,6 +114,6 @@ def main_program():
     data_money = get_amount()
     implementation = get_implementation()
     description = get_notes()
-    update_date_worksheet(date, data_money,implementation)
+    update_date_worksheet(date,data_money,implementation,description)
 
 main_program()
