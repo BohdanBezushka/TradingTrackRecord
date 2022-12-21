@@ -31,7 +31,8 @@ def get_date():
 
     while True:
         """
-        The user has to enter an exact date if not the loop will repeatedly request data, until it is valid.
+        The user has to enter an exact date if not the loop 
+        will repeatedly request data, until it is valid.
         """
         try:
             day_session = input("Enter date:")
@@ -122,3 +123,24 @@ main_program()
 
 # 2.Show track record.
 
+def print_all_data():
+    """
+    Gets all values from the spreadsheet and prints them 
+    on the terminal in the form of a table 
+    generated with the PrettyTable library.
+    """
+    table = PrettyTable()
+    table.field_names = ["Date", "Amount", "Implementation", "Notes"]
+    table._max_table_width = 180
+    all_data = SHEET.worksheet("2023").get_all_values()
+    all_data_no_headers = all_data[1:]
+
+    
+    for i in all_data_no_headers:
+        # Each iteration adds a row to the table, skips the headers.
+        table.add_rows(
+            [i[:]]
+        )
+    print(table)
+
+print_all_data()
