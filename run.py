@@ -139,6 +139,17 @@ def print_all_data():
         )
     print(table)
 
+    print("\033[32mDo you want to return to the menu?\033[0m\n")
+    
+    while True:
+        option_menu = input("\033[33mReturn to menu (YES):\033[0m\n")
+        if option_menu == "YES":
+            print("\033[32mReturning to the main menu...\033[0m\n")
+            start_menu()
+            break
+        else:
+            print("\033[31mYou didn't give a correct answer.\033[0m\n")
+
 #Programme start:
 
 def start_menu():
