@@ -1,7 +1,3 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 import gspread
 from datetime import datetime
 from google.oauth2.service_account import Credentials
@@ -166,7 +162,7 @@ def start_menu():
         if option == "1":
             print("\033[32mStarting trade registration...\033[0m\n")
             main_program()
-            
+            start_menu()
             break
         elif option == "2":
             print("\033[32mStarting summary display...\033[0m\n")
@@ -175,6 +171,4 @@ def start_menu():
         else:
             print("\033[31mYou didn't give a correct answer.\033[0m\n")
 
-    
 start_menu()
-
