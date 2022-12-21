@@ -5,6 +5,7 @@
 import gspread
 from datetime import datetime
 from google.oauth2.service_account import Credentials
+from prettytable import PrettyTable
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -17,6 +18,7 @@ SCOPED_TRADINGTRACKRECORD = TRADINGTRACKRECORD.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_TRADINGTRACKRECORD)
 SHEET = GSPREAD_CLIENT.open("TradingTrackRecord")
 
+# 1.Register trade.
 def get_date():
     """
     The user has to enter the exact date.
@@ -117,3 +119,6 @@ def main_program():
     update_date_worksheet(date,data_money,implementation,description)
 
 main_program()
+
+# 2.Show track record.
+
