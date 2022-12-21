@@ -6,6 +6,8 @@ import gspread
 from datetime import datetime
 from google.oauth2.service_account import Credentials
 from prettytable import PrettyTable
+import colorama
+from colorama import Fore, Style
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -17,32 +19,6 @@ TRADINGTRACKRECORD = Credentials.from_service_account_file("tradingtrackrecord.j
 SCOPED_TRADINGTRACKRECORD = TRADINGTRACKRECORD.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_TRADINGTRACKRECORD)
 SHEET = GSPREAD_CLIENT.open("TradingTrackRecord")
-
-#Programme start:
-
-def start_menu():
-    """ 
-    This is what the user sees at the start of the programme.
-    The user will have option 1 to record his daily operation 
-    and option 2 to see a summary of the entire worksheet.
-    """
-    print("Indicate only with a YES or NO")
-    print("If you have followed your trading plan.")
-
-    while True:
-        """
-        If no YES or NO is received, an error message will
-        be displayed to the user and the loop will continue to run.
-        """
-        answer = input("Have you followed your trading plan? (YES/NO):")
-        if answer.upper() == "YES":
-            print("You respected your investment rules ;)")
-            break
-        elif answer.upper() == "NO":
-            print("You didn't respect your investment rules :(")
-            break
-        else:
-            print("You did not give a correct answer.")
 
 # 1.Register trade.
 def get_date():
@@ -167,3 +143,37 @@ def print_all_data():
             [i[:]]
         )
     print(table)
+
+#Programme start:
+
+def start_menu():
+    """ 
+    This is what the user sees at the start of the programme.
+    The user will have option 1 to record his daily operation 
+    and option 2 to see a summary of the entire worksheet.
+    """
+    print("\n" * 2)
+    print(" " * 20 + "\033[3;1;4;33mWelcome to TradingTrackRecord\033[0m")
+    print(" " * 13 + '"The recording of daily trades is fundamental')
+    print(" " * 17 + 'to improve as an investor and that')
+    print(" " * 22 + 'is why you are here."')
+    print("\n" * 2)
+
+    print("\033[32mIf you want to register your trade type: 1.\033[0m\n")
+    print("\033[32mIf you want to see the full summary type: 2.\033[0m\n")
+    
+    while True:
+        option = input("What do you want to do? (1/2):\n")
+        if option == "1":
+            print("Starting trade registration")
+            main_program()
+            break
+        elif option == "2":
+            print("Starting summary display")
+            print_all_data()
+            break
+        else:
+            print("You didn't give a correct answer.")
+
+    
+start_menu()
