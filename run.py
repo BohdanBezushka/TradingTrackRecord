@@ -18,6 +18,32 @@ SCOPED_TRADINGTRACKRECORD = TRADINGTRACKRECORD.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_TRADINGTRACKRECORD)
 SHEET = GSPREAD_CLIENT.open("TradingTrackRecord")
 
+#Programme start:
+
+def start_menu():
+    """ 
+    This is what the user sees at the start of the programme.
+    The user will have option 1 to record his daily operation 
+    and option 2 to see a summary of the entire worksheet.
+    """
+    print("Indicate only with a YES or NO")
+    print("If you have followed your trading plan.")
+
+    while True:
+        """
+        If no YES or NO is received, an error message will
+        be displayed to the user and the loop will continue to run.
+        """
+        answer = input("Have you followed your trading plan? (YES/NO):")
+        if answer.upper() == "YES":
+            print("You respected your investment rules ;)")
+            break
+        elif answer.upper() == "NO":
+            print("You didn't respect your investment rules :(")
+            break
+        else:
+            print("You did not give a correct answer.")
+
 # 1.Register trade.
 def get_date():
     """
@@ -119,7 +145,6 @@ def main_program():
     description = get_notes()
     update_date_worksheet(date,data_money,implementation,description)
 
-main_program()
 
 # 2.Show track record.
 
@@ -142,5 +167,3 @@ def print_all_data():
             [i[:]]
         )
     print(table)
-
-print_all_data()
