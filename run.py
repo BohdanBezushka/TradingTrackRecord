@@ -107,7 +107,7 @@ def update_date_worksheet(date,data_money,implementation,description):
     print("\033[32mAdding data to the TradingTrackRecord worksheet.\033[0m\n")
     date_worksheet = SHEET.worksheet("2023")
     date_worksheet.append_row([date,data_money,implementation,description])
-    print("\033[32mDate and amount updated successfully.\033[0m\n")
+    print("\033[32mData updated successfully.\033[0m\n")
 
 
 def main_program():
@@ -166,6 +166,7 @@ def start_menu():
         if option == "1":
             print("\033[32mStarting trade registration...\033[0m\n")
             main_program()
+            
             break
         elif option == "2":
             print("\033[32mStarting summary display...\033[0m\n")
