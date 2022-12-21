@@ -27,9 +27,9 @@ def get_date():
     If the value is incorrect, a message will be
     displayed and the user will have to re-enter the correct date.
     """
-    print("Hello, enter the date of your trading session.")
-    print("The date must follow the following structure:")
-    print("Two-digit day, two-digit month, Four-digit year (example: 11-03-2023).")
+    print("\033[32mHello, enter the date of your trading session.\033[0m\n")
+    print("\033[32mThe date must follow the following structure:\033[0m\n")
+    print("\033[32mTwo-digit day, two-digit month, Four-digit year (example: 11-03-2023).\033[0m\n")
 
     while True:
         """
@@ -37,12 +37,12 @@ def get_date():
         will repeatedly request data, until it is valid.
         """
         try:
-            day_session = input("Enter date:")
+            day_session = input("\033[33mEnter date:\033[0m\n")
             datetime.strptime(day_session,'%d-%m-%Y')
             print(f"{day_session} is valid :)")
             break
         except ValueError:
-            print("The date entered is incorrect")
+            print("\033[31mThe date entered is incorrect!\033[0m\n")
     return day_session
 
 def get_amount():
@@ -51,63 +51,63 @@ def get_amount():
     If the value is incorrect, a message will be
     displayed and the user will have to re-enter the correct date.
     """
-    print("Please enter the result of the investment operation below.")
-    print("The quantity can be negative, positive or zero.")
-    print("There can be a maximum of two decimal places.")
-    print("Example: -100.32, 0.00, 220.80")
+    print("\033[32mPlease enter the result of the investment operation below.\033[0m\n")
+    print("\033[32mThe quantity can be negative, positive or zero.\033[0m\n")
+    print("\033[32mThere can be a maximum of two decimal places.\033[0m\n")
+    print("\033[32mExample: -100.32, 0.00, 220.80\033[0m\n")
 
     while True:
         """
         The user has to enter an exact amount if not the loop will repeatedly request data, until it is valid.
         """
         try:
-            money = float(input("Enter amount:"))
+            money = float(input("\033[33mEnter amount:\033[0m\n"))
             print(f"{format(money, '.2f')} is valid.")
             break
         except ValueError:
-            print("You entered an incorrect value.")
+            print("\033[31mYou entered an incorrect value!\033[0m\n")
     return money
 
 def get_implementation():
     """ 
     The user has to indicate YES or NO. 
     """
-    print("Indicate only with a YES or NO")
-    print("If you have followed your trading plan.")
+    print("\033[32mHave you followed your trading plan?dfsf\033[0m\n")
+    print("\033[32mIndicate only with a YES or NO.\033[0m\n")
 
     while True:
         """
         If no YES or NO is received, an error message will
         be displayed to the user and the loop will continue to run.
         """
-        answer = input("Have you followed your trading plan? (YES/NO):")
+        answer = input("\033[33mHave you followed your trading plan? (YES/NO):\033[0m\n")
         if answer.upper() == "YES":
-            print("You respected your investment rules ;)")
+            print("\033[32mYou respected your investment rules ;)\033[0m\n")
             break
         elif answer.upper() == "NO":
-            print("You didn't respect your investment rules :(")
+            print("\033[32mYou didn't respect your investment rules :(\033[0m\n")
             break
         else:
-            print("You did not give a correct answer.")
+            print("\033[31mYou didn't give a correct answer!\033[0m\n")
     return answer
 
 def get_notes():
     """
     The user has to describe the most relevant details of the daily operation.
     """
-    print("Describe your operation clearly and precisely.")
-    print("If you have not complied with your trading plan, please indicate the reason.")
-    note = input("Describe your trade:")
+    print("\033[32mDescribe your operation clearly and precisely.\033[0m\n")
+    print("\033[32mIf you have not complied with your trading plan, please indicate the reason.\033[0m\n")
+    note = input("\033[33mDescribe your trade:\033[0m\n")
     return note
 
 def update_date_worksheet(date,data_money,implementation,description):
     """
     Update the worksheet, add the date and amount specified by the user in the "Date" column. 
     """
-    print("Adding date and amount to the TradingTrackRecord worksheet.")
+    print("\033[32mAdding data to the TradingTrackRecord worksheet.\033[0m\n")
     date_worksheet = SHEET.worksheet("2023")
     date_worksheet.append_row([date,data_money,implementation,description])
-    print("Date and amount updated successfully.\n")
+    print("\033[32mDate and amount updated successfully.\033[0m\n")
 
 
 def main_program():
@@ -115,7 +115,6 @@ def main_program():
     Run all program functions.
     """
     date = get_date()
-    print(date)
     data_money = get_amount()
     implementation = get_implementation()
     description = get_notes()
@@ -163,17 +162,18 @@ def start_menu():
     print("\033[32mIf you want to see the full summary type: 2.\033[0m\n")
     
     while True:
-        option = input("What do you want to do? (1/2):\n")
+        option = input("\033[33mWhat do you want to do? (1/2):\033[0m\n")
         if option == "1":
-            print("Starting trade registration")
+            print("\033[32mStarting trade registration...\033[0m\n")
             main_program()
             break
         elif option == "2":
-            print("Starting summary display")
+            print("\033[32mStarting summary display...\033[0m\n")
             print_all_data()
             break
         else:
-            print("You didn't give a correct answer.")
+            print("\033[31mYou didn't give a correct answer.\033[0m\n")
 
     
 start_menu()
+
