@@ -11,10 +11,10 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
     ]
 
-TRADINGTRACKRECORD = Credentials.from_service_account_file("tradingtrackrecord.json")
-SCOPED_TRADINGTRACKRECORD = TRADINGTRACKRECORD.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_TRADINGTRACKRECORD)
-SHEET = GSPREAD_CLIENT.open("TradingTrackRecord")
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('TradingTrackRecord')
 
 # 1.Register trade.
 def get_date():
