@@ -63,7 +63,7 @@ def get_amount():
         """
         try:
             money = float(input("\033[33mEnter amount:\033[0m\n"))
-            print(f"{format(money, '.2f')} is valid.")
+            print(f"{format(money, '.2f')} is valid :)")
             break
         except ValueError:
             print("\033[31mYou entered an incorrect value!\033[0m\n")
@@ -74,7 +74,7 @@ def get_implementation():
     """
     The user has to indicate YES or NO.
     """
-    print("\033[32mHave you followed your trading plan?dfsf\033[0m\n")
+    print("\033[32mHave you followed your trading plan?\033[0m\n")
     print("\033[32mIndicate only with a YES or NO.\033[0m\n")
 
     while True:
