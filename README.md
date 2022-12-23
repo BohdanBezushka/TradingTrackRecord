@@ -12,7 +12,7 @@ The project is designed for people involved in trading. It allows the user to re
   * [User Stories](#User-Stories)
 * [Flowchart](#Flowchart)
 * [Colour Scheme](#Colour-Scheme)
-* [Database structure](###Database-structure)
+* [Database structure](#Database-structure)
 * [Features](#Features)
   * [Menu](#Menu)
   * [Option 1](#Option-1)
@@ -27,7 +27,7 @@ The project is designed for people involved in trading. It allows the user to re
 * [Unfixed Bugs](#Unfixed-Bugs)
 * [Deployment](#Deployment)
   * [Local Deployment](#Local-Deployment)
-  * [Heroku Deployment](#Heroku Deployment)
+  * [Heroku Deployment](#Heroku-Deployment)
 * [Credits](#Credits)
   * [Information Resources](#Information-Resources)
   * [Content](#Content)
@@ -93,7 +93,8 @@ If the answer is NO, I show a sad face and then I ask him to write down why he h
 After the description, the worksheet is updated and returns to the menu automatically.
 ![image20](https://user-images.githubusercontent.com/94321555/209342273-040e6290-8f70-4143-a740-714c8cb352ce.png)
 
-If the user enters option 2, a complete record of all trades is displayed. It also gives the option to return to the menu when the user types YES.
+### Option 2 
+A complete record of all trades is displayed. It also gives the option to return to the menu when the user types YES.
 ![image7](https://user-images.githubusercontent.com/94321555/209342354-18dc04e4-164c-4b12-921b-98f288e23a28.png)
 
 ### Features Left to Implement
@@ -209,7 +210,7 @@ The frontend terminal should now be connected and deployed to Heroku.
 
 - The documentation of [*gspread*](https://docs.gspread.org/en/v5.7.0/), [*colorama*](https://pypi.org/project/colorama/), [*datetime*](https://pypi.org/project/DateTime/) and [*prettytable*](https://pypi.org/project/prettytable/).
 
-## Content
+### Content
 I came up with the idea because I am in the trading business and in the future I would like to create a quality software for investors.
 
 ### Acknowledgements
