@@ -83,14 +83,14 @@ def get_implementation():
         be displayed to the user and the loop will continue to run.
         """
         answer = input("\033[33mHave you followed your"
-                       "trading plan? (YES/NO):\033[0m\n")
+                       " trading plan? (YES/NO):\033[0m\n")
         if answer.upper() == "YES":
             print("\033[32mYou respected"
-                  "your investment rules ;)\033[0m\n")
+                  " your investment rules ;)\033[0m\n")
             break
         elif answer.upper() == "NO":
             print("\033[32mYou didn't respect your"
-                  "investment rules :(\033[0m\n")
+                  " investment rules :(\033[0m\n")
             break
         else:
             print("\033[31mYou didn't give a correct answer!\033[0m\n")
@@ -103,7 +103,7 @@ def get_notes():
     """
     print("\033[32mDescribe your operation clearly and precisely.\033[0m\n")
     print("\033[32mIf you have not complied with your trading"
-          "plan, please indicate the reason.\033[0m\n")
+          " plan, please indicate the reason.\033[0m\n")
     note = input("\033[33mDescribe your trade:\033[0m\n")
     return note
 
