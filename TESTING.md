@@ -3,7 +3,7 @@ I validated run.py file using [Code Institute's Python Linter](https://pep8ci.he
 
 | File Validated | Image |
 | -------------- | ----- |
-| [run.py](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/BohdanBezushka/TradingTrackRecord/main/run.py) | (https://github.com/adamgilroy22/python-hangman/blob/main/documentation/testing/user-story-1-a.png)
+| [run.py](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/BohdanBezushka/TradingTrackRecord/main/run.py) | ![image18](https://user-images.githubusercontent.com/94321555/209486384-8b4502e4-c096-4bd1-a8ca-920ae6eb2bb3.png) |
 
 ## __User Stories Testing__
 | User Goal | Requirement met | Image(s) |
