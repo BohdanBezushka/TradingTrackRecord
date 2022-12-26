@@ -51,7 +51,7 @@ def get_amount():
     displayed and the user will have to re-enter the correct date.
     """
     print("\033[32mPlease enter the result of"
-          "the investment operation below.\033[0m\n")
+          " the investment operation below.\033[0m\n")
     print("\033[32mThe quantity can be negative, positive or zero.\033[0m\n")
     print("\033[32mThere can be a maximum of two decimal places.\033[0m\n")
     print("\033[32mExample: -100.32, 0.00, 220.80\033[0m\n")
